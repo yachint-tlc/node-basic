@@ -1,0 +1,68 @@
+# Node.js specific
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.sublime-workspace
+*.sublime-project
+
+# Build and dependency directories
+dist/
+build/
+coverage/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Test coverage reports
+.nyc_output/
+coverage/
+
+# Optional npm cache directory
+.npm/
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Lock files (optional, depending on your workflow)
+package-lock.json
+yarn.lock
+
+# TypeScript specific (if applicable)
+*.tsbuildinfo
+
+# PM2 logs (if using PM2 for process management)
+.pids/
+pm2.log
+pm2.pid
+
+# Miscellaneous
+*.bak
+*.orig

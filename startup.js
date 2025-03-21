@@ -15,6 +15,12 @@ app.use(morgan("dev")) // Logging
 
 // Routes
 app.use('/api', routes)
+app.use('/', (req, res) => {
+    res.status(200).send({
+        error: false,
+        msg: "Welcome to the NodeJS-Postgres Server with JWT Authentication!"
+    })
+})
 
 app.use(errors());
 app.use(globalErrorHandler)

@@ -3,6 +3,7 @@ const express = require('express')
 const app = express();
 const morgan = require('morgan');
 const helmet = require('helmet');
+const cors = require('cors');
 const { errors } = require('celebrate');
 const { connectToDB, initDb } = require('./config/database')
 const swaggerUi = require('swagger-ui-express');
@@ -12,6 +13,7 @@ const routes = require('./routes/index.routes');
 const globalErrorHandler = require('./middleware/error.middleware');
 
 app.use(express.json());
+app.use(cors());
 app.use(helmet()) // Security 
 app.use(morgan("dev")) // Logging 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));

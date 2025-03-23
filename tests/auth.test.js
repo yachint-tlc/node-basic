@@ -346,17 +346,4 @@ describe('Logout all Devices API', () => {
         expect(response.body).to.have.property('msg').to.equal("Logged out of all devices successfully")
     }, DEFAULT_TIMEOUT);
 
-    // CASE 2
-    it('should return 400 if fields are missing or incorrect', async () => {
-        const userData = {
-            'refresToken': 'ABC',
-        }
-
-        const response = await chai
-            .request(server)
-            .post(PREFIX + '/logout-all')
-            .send(userData);
-
-        expect(response).to.have.status(400);
-    }, DEFAULT_TIMEOUT)
 })

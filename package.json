@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon startup.js",
-    "prod": "node startup.js"
+    "test": "mocha --timeout 10000 tests/",
+    "start": "nodemon server.js",
+    "prod": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -14,11 +14,14 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "celebrate": "^15.0.3",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.2",
+    "mocha": "^11.1.0",
     "morgan": "^1.10.0",
     "pg": "^8.14.1"
   },

@@ -110,7 +110,7 @@ exports.refreshToken = async (req, res, next) => {
 
     } catch(err) {
         console.log(err);
-        if (err.message === "Invalid or expired refresh token") {
+        if (err.message === "Invalid or expired refresh token!") {
             return res.status(401).json({
                 err: true, 
                 msg: err.message 
@@ -134,11 +134,11 @@ exports.logout = async (req, res, next) => {
             error: false,
             msg: "Logged out successfully"
         });
-  } catch (error) {
+    } catch (error) {
         console.error(error);
         res.status(500);
         next(err);
-  }
+    }
 }
 
 exports.logoutAll = async (req, res, next) => {

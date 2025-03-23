@@ -40,7 +40,7 @@ jobs:
           echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> $GITHUB_ENV
           echo "JWT_EXPIRES_IN=${{ secrets.JWT_EXPIRES_IN }}" >> $GITHUB_ENV
           echo "REFRESH_TOKEN_EXPIRES_IN=${{ secrets.REFRESH_TOKEN_EXPIRES_IN }}" >> $GITHUB_ENV
-      - name: Add node_modules to PATH
-        run: echo "::add-path::$(npm prefix)/node_modules/.bin"
+      - name: Add node_modules/.bin to PATH using Environment File
+        run: echo "PATH=$(npm prefix)/node_modules/.bin:$PATH" >> $GITHUB_ENV
       - name: Run Tests
         run: npm run test

@@ -33,5 +33,12 @@ jobs:
       - name: Install Dependencies
         if: steps.cache-npm.outputs.cache-hit != 'true'
         run: npm install
+      - name: Set Environment Variables
+        run: |
+          echo "PORT=${{ secrets.PORT }}" >> $GITHUB_ENV
+          echo "DATABASE_URI=${{ secrets.DATABASE_URI }}" >> $GITHUB_ENV
+          echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> $GITHUB_ENV
+          echo "JWT_EXPIRES_IN=${{ secrets.JWT_EXPIRES_IN }}" >> $GITHUB_ENV
+          echo "REFRESH_TOKEN_EXPIRES_IN=${{ secrets.REFRESH_TOKEN_EXPIRES_IN }}" >> $GITHUB_ENV
       - name: Run Tests
         run: npm run test

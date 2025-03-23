@@ -15,7 +15,7 @@ const options = {
     servers: [
       {
         url: "/",
-        description: "Current-server",
+        description: "Current server",
       },
     ],
   },

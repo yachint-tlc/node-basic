@@ -27,7 +27,7 @@ jobs:
         id: cache-npm
         with:
           path: /node_modules
-          key: ${{ runner.OS }}-npm-${{ hashFiles('**/package.json') }}
+          key: ${{ runner.OS }}-npm-${{ hashFiles('/package.json') }}
           restore-keys: |
             ${{ runner.OS }}-npm-
       - name: Install Dependencies

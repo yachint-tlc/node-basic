@@ -16,7 +16,14 @@ app.use(express.json());
 app.use(cors());
 app.use(helmet()) // Security 
 app.use(morgan("dev")) // Logging 
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
+app.get("/api-docs/swagger.json", (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.send(swaggerSpecs);
+});
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs, {
+  explorer: true
+}));
 
 // Routes
 app.use('/api', routes)

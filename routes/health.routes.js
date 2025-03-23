@@ -3,7 +3,7 @@ const healthController = require('../controllers/health.controller')
 
 /**
  * @swagger
- * /health:
+ * /api/health:
  *   get:
  *     summary: Check server health
  *     tags: [Health]
